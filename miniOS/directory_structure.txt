@@ -1,0 +1,51 @@
+DIR root
+DIR private
+ENDDIR
+DIR Library
+ENDDIR
+DIR .bin
+ENDDIR
+DIR System
+ENDDIR
+DIR User
+DIR 안지훈
+ENDDIR
+DIR 장진영
+ENDDIR
+DIR 박현빈
+ENDDIR
+DIR 이시호
+ENDDIR
+DIR Shared
+ENDDIR
+DIR 5Team
+DIR miniOS
+FILE README.md
+FILE Makefile
+DIR scripts
+FILE build.sh
+ENDDIR
+DIR lib
+FILE basic_lib.c
+ENDDIR
+DIR kernel
+FILE system.c
+FILE process.c
+FILE kernel.c
+ENDDIR
+DIR include
+FILE system.h
+FILE basic_include.h
+ENDDIR
+DIR drivers
+FILE basic_driver.c
+ENDDIR
+DIR boot
+FILE boot.asm
+ENDDIR
+ENDDIR
+ENDDIR
+ENDDIR
+DIR clipboard
+ENDDIR
+ENDDIR
