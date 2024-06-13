@@ -1,2 +1,2 @@
 # miniOS
-# miniOS branch에 각자 코드 올려주세요
+# miniOS 5팀 최종 보고서 및 결과물
