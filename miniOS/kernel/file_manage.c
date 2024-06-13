@@ -256,18 +256,15 @@ Directory* loadDirectoryStructure(FILE* file, Directory* parent) {
             if (parent != NULL) {
                 if (parent->subDirs == NULL) {
                     parent->subDirs = newDir;
-                } else {
-                    Directory* subDir = parent->subDirs;
-                    while (subDir->next != NULL) {
-                        subDir = subDir->next;
-                    }
-                    subDir->next = newDir;
+                } 
+                else {
+                    lastSubDir->next = newDir;
                 }
             }
-
             if (lastSubDir == NULL) {
                 lastSubDir = newDir;
-            } else {
+            }
+            else {
                 lastSubDir->next = newDir;
                 lastSubDir = newDir;
             }
@@ -318,7 +315,19 @@ void file_system() {
                 clipboardDir = clipboardDir->next;
             }
             if (clipboardDir != NULL) break;
-            clipboardDir = clipboardDir->subDirs;
+            clipboardDir = clipboardDir->subDirs;   
+        }
+        if (clipboardDir == NULL) {
+            clipboardDir = createDirectory("clipboard", rootDir);
+            if (rootDir->subDirs == NULL) {
+                rootDir->subDirs = clipboardDir;
+            }
+            else {
+                Directory* lastSubDir = rootDir->subDirs;
+                while (lastSubDir->next != NULL)
+                    lastSubDir = lastSubDir->next;
+                lastSubDir->next = clipboardDir;
+            }
         }
     }
     else {
